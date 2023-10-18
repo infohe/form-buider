@@ -3,8 +3,8 @@ import Form from '@rjsf/core';
 import { FormBuilder as FB } from '@ginkgo-bioworks/react-json-schema-form-builder';
  
 const customFormInputs = {
-  shortAnswer: {
-    displayName: "Emails",
+  hidden: {
+    displayName: "Hidden",
     matchIf: [
       {
         types: ["string"],
@@ -17,15 +17,15 @@ const customFormInputs = {
     },
     type: "string",
     cardBody: (parameters, onChange) => <div>
-      <h5>Default email</h5>
-      <input
+      <h5>This is a hidden field</h5>
+      {/* <input
         value={parameters.default}
         placeholder="Default"
         type="text"
         onChange={(ev) =>
           onChange({ ...parameters, default: ev.target.value })
         }
-      />
+      /> */}
     </div>,
     modalBody: (parameters, onChange) => <div>
       Extra editing options in modal appear hear
